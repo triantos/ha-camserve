@@ -1,0 +1,28 @@
+alias: Camserve Detection Notification
+description: >-
+  Send mobile notification with thumbnail and action buttons when camserve
+  detects a person, vehicle, or package.
+triggers:
+  - trigger: event
+    event_type: camserve_detection
+conditions: []
+actions:
+  - action: notify.mobile_app_nick_s_iphone
+    data:
+      title: "{{ trigger.event.data.category | title }} Detected"
+      message: >-
+        {{ trigger.event.data.camera_label }} — {{
+        trigger.event.data.description }}
+      data:
+        image: /api/camserve/events/{{ trigger.event.data.event_id }}/thumb
+        actions:
+          - action: URI
+            title: View Clip
+            uri: >-
+              /media-browser/browser/media-source%3A%2F%2Fcamserve%2F{{
+              trigger.event.data.event_id }}
+          - action: URI
+            title: Live View
+            uri: "entityId:camera.camserve_{{ trigger.event.data.camera_id }}"
+mode: parallel
+max: 10

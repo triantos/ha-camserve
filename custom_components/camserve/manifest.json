@@ -1,0 +1,11 @@
+{
+  "domain": "camserve",
+  "name": "Camserve",
+  "codeowners": ["@triantos"],
+  "config_flow": true,
+  "dependencies": ["media_source"],
+  "documentation": "https://github.com/triantos/camserve",
+  "iot_class": "local_polling",
+  "requirements": ["aiohttp"],
+  "version": "0.1.0"
+}

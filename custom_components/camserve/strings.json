@@ -1,0 +1,22 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Camserve",
+        "data": {
+          "host": "Camserve server URL"
+        },
+        "data_description": {
+          "host": "e.g. http://camserve.home.triantos.com:8080"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to Camserve server",
+      "unknown": "Unexpected error"
+    },
+    "abort": {
+      "already_configured": "Camserve is already configured"
+    }
+  }
+}
