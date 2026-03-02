@@ -18,9 +18,7 @@ actions:
         actions:
           - action: URI
             title: View Clip
-            uri: >-
-              /media-browser/browser/media-source%3A%2F%2Fcamserve%2F{{
-              trigger.event.data.event_id }}
+            uri: /api/camserve/events/{{ trigger.event.data.event_id }}/clip
           - action: URI
             title: Live View
             uri: "entityId:camera.camserve_{{ trigger.event.data.camera_id }}"
